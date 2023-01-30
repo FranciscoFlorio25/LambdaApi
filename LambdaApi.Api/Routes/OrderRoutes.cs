@@ -11,14 +11,13 @@ namespace LambdaApi.Api.Routes
         const string PATH = "/Customer/{CustomerId}";
         public static IEndpointRouteBuilder MapOrders(this IEndpointRouteBuilder builder)
         {
-            var group = builder.MapGroup(PATH);
 
-            group.MapGet("", async (Guid CustomerId, IMediator mediator) =>
+            builder.MapGet(PATH, async (Guid CustomerId, IMediator mediator) =>
             await mediator.Send(new GetCustomerOrderRequest(CustomerId)).ToHttpResult());
 
-            group.MapPost("", async (CreateOrderRequest request,IMediator mediator) => await mediator.Send(request).ToHttpResult());
+            builder.MapPost(PATH, async (CreateOrderRequest request,IMediator mediator) => await mediator.Send(request).ToHttpResult());
 
-            group.MapDelete("{OrderId}", async (Guid CustomerId, Guid OrderId, IMediator mediator) =>
+            builder.MapDelete(PATH + "/{OrderId}", async (Guid CustomerId, Guid OrderId, IMediator mediator) =>
             await mediator.Send(new DeleteOrderRequest(CustomerId, OrderId)).ToHttpResult());
 
 

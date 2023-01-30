@@ -14,16 +14,16 @@ namespace LambdaApi.Api.Routes
 
         public static IEndpointRouteBuilder MapCustomer(this IEndpointRouteBuilder builder)
         {
-            var group = builder.MapGroup(PATH);
+           
 
-            group.MapPost("", async (IMediator mediator, AddCustomerRequest request) => await mediator.Send(request).ToHttpResult());
+            builder.MapPost(PATH, async (IMediator mediator, AddCustomerRequest request) => await mediator.Send(request).ToHttpResult());
 
-            group.MapGet("", async (IMediator mediator) => await mediator.Send(new GetCustomerRequest()).ToHttpResult());
+            builder.MapGet(PATH, async (IMediator mediator) => await mediator.Send(new GetCustomerRequest()).ToHttpResult());
 
-            group.MapGet("{customerId}", async (Guid CustomerId, IMediator mediator) => 
+            builder.MapGet(PATH + "/{customerId}", async (Guid CustomerId, IMediator mediator) => 
             await mediator.Send(new GetCustomerByIdRequest(CustomerId)).ToHttpResult());
 
-            group.MapDelete("{CustomerId}", async (Guid CustomerId, IMediator mediator) =>
+            builder.MapDelete(PATH + "/{CustomerId}", async (Guid CustomerId, IMediator mediator) =>
             await mediator.Send(new DeleteCustomerRequest(CustomerId)).ToHttpResult());
 
             return builder;

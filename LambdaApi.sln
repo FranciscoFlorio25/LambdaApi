@@ -4,12 +4,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaApi", "LambdaApi\LambdaApi.csproj", "{2616B59F-F5E2-4FFC-9670-131980331918}"
+	ProjectSection(ProjectDependencies) = postProject
+		{82A81D44-6628-4957-B1BE-8B146ADB6840} = {82A81D44-6628-4957-B1BE-8B146ADB6840}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaApi.Infraestructure", "LambdaApi.Infraestructure\LambdaApi.Infraestructure.csproj", "{7CC19E26-D99C-4167-B6B0-1F8AE67E1DAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaApi.Domain", "LambdaApi.Domain\LambdaApi.Domain.csproj", "{1D36D862-4439-4FF0-8B0B-7BF34B0AEC10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaApi.Domain", "LambdaApi.Domain\LambdaApi.Domain.csproj", "{1D36D862-4439-4FF0-8B0B-7BF34B0AEC10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaApi.Application", "LambdaApi.Application\LambdaApi.Application.csproj", "{FB519AF6-05D8-41B2-ADD5-B0446360A862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaApi.Application", "LambdaApi.Application\LambdaApi.Application.csproj", "{FB519AF6-05D8-41B2-ADD5-B0446360A862}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaApi.Api", "LambdaApi.Api\LambdaApi.Api.csproj", "{82A81D44-6628-4957-B1BE-8B146ADB6840}"
 EndProject
