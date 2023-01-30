@@ -26,6 +26,7 @@ namespace LambdaApi.Application.UseCases.Customer.AddCustomer
             try
             {
                 await _context.Customers.AddAsync (costumer);
+                await _context.SaveChangesAsync(cancellationToken);
             }
             catch (Exception ex)
             {

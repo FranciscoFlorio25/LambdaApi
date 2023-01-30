@@ -33,6 +33,7 @@ namespace LambdaApi.Application.UseCases.Customer.DeleteCustomer
                 var products = await _context.CustomerOrders.Where(x => x.CustomerId == customer.id).ToListAsync();
                 _context.CustomerOrders.RemoveRange(products);
                 _context.Customers.Remove(customer);
+                await _context.SaveChangesAsync(cancellationToken);
             }
             catch(Exception ex)
             {

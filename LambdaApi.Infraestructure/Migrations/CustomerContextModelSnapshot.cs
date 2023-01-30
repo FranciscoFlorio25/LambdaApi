@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LambdaApi.Infraestructure.Migrations
 {
-    [DbContext(typeof(CostumerContext))]
+    [DbContext(typeof(CustomerContext))]
     partial class CustomerContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace LambdaApi.Infraestructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("LambdaApi.Domain.Entity.Costumer", b =>
+            modelBuilder.Entity("LambdaApi.Domain.Entity.Customer", b =>
                 {
                     b.Property<Guid>("id")
                         .ValueGeneratedOnAdd()
@@ -49,7 +49,7 @@ namespace LambdaApi.Infraestructure.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("LambdaApi.Domain.Entity.CostumerOrder", b =>
+            modelBuilder.Entity("LambdaApi.Domain.Entity.CustomerOrder", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

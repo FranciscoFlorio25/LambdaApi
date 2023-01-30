@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
@@ -19,5 +19,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LambdaApi.Application\LambdaApi.Application.csproj" />
+    <ProjectReference Include="..\LambdaApi.Domain\LambdaApi.Domain.csproj" />
+    <ProjectReference Include="..\LambdaApi.Infraestructure\LambdaApi.Infraestructure.csproj" />
   </ItemGroup>
 </Project>

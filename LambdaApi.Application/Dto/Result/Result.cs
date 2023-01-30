@@ -36,7 +36,7 @@
             => result.Succeeded;
     }
 
-    public class Result<TData> : Result where TData : class
+    public class Result<TData> : Result
     {
 
         public Result()

@@ -11,9 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LambdaApi.Infraestructure.Migrations
 {
-    [DbContext(typeof(CostumerContext))]
-    [Migration("20230130134106_DataTablesNamesFixed")]
-    partial class DataTablesNamesFixed
+    [DbContext(typeof(CustomerContext))]
+    [Migration("20230130170552_initialmigration")]
+    partial class initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace LambdaApi.Infraestructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("LambdaApi.Domain.Entity.Costumer", b =>
+            modelBuilder.Entity("LambdaApi.Domain.Entity.Customer", b =>
                 {
                     b.Property<Guid>("id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,7 @@ namespace LambdaApi.Infraestructure.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("LambdaApi.Domain.Entity.CostumerOrder", b =>
+            modelBuilder.Entity("LambdaApi.Domain.Entity.CustomerOrder", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

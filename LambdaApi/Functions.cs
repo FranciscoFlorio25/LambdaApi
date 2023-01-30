@@ -1,38 +1,32 @@
 using System.Net;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
-
+using Microsoft.Extensions.DependencyInjection;
+using LambdaApi.Infraestructure;
+using LambdaApi.Application;
+using Microsoft.Extensions.Configuration;
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
 namespace LambdaApi;
 
-public class Functions
+public class Function
 {
-    /// <summary>
-    /// Default constructor that Lambda will invoke.
-    /// </summary>
-    public Functions()
+    readonly IServiceProvider _serviceProvider;
+    
+    public Function()
     {
+        Console.WriteLine("Setting up the DI container");
+        var serviceCollection = new ServiceCollection();
+        Console.WriteLine("Adding a scoped service");
+        //serviceCollection.AddInfraestructure();
+        serviceCollection.AddApplication();
+        _serviceProvider = serviceCollection.BuildServiceProvider();
     }
 
-
-    /// <summary>
-    /// A Lambda function to respond to HTTP Get methods from API Gateway
-    /// </summary>
-    /// <param name="request"></param>
-    /// <returns>The API Gateway response.</returns>
-    public APIGatewayProxyResponse Get(APIGatewayProxyRequest request, ILambdaContext context)
+    public string FunctionHandler(string input, ILambdaContext context)
     {
-        context.Logger.LogInformation("Get Request\n");
 
-        var response = new APIGatewayProxyResponse
-        {
-            StatusCode = (int)HttpStatusCode.OK,
-            Body = "Hello AWS Serverless",
-            Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
-        };
-
-        return response;
+        return "Cereal";
     }
 }

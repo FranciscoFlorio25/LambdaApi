@@ -7,8 +7,8 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LambdaApi.Application.UseCases.CustomerOrder.GetCustomerOrder
+namespace LambdaApi.Application.UseCases.CreateOrder
 {
-    public record GetCustomerOrderRequest(Guid Customer) : IRequest<Result<GetCustomerOrderResponse>>;
+    public record CreateOrderRequest(Guid CustomerId, string ProdcutName, string ProductDescription, float ProductoPrice) : IRequest<Result<CreateOrderResponse>>;
 
 }
