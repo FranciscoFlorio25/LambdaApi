@@ -1,7 +1,12 @@
 ﻿using LambdaApi.Application.Dto.Result;
+using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace LambdaApi.Api.Extensions
+namespace LambdaApi.Extensions
 {
 
     public static class ResultExtensions

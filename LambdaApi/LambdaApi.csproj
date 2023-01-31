@@ -11,6 +11,14 @@
     <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="appettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Amazon.Lambda.Annotations" Version="0.10.0-preview" />
     <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.0" />
@@ -20,11 +28,15 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LambdaApi.Application\LambdaApi.Application.csproj" />
-    <ProjectReference Include="..\LambdaApi.Domain\LambdaApi.Domain.csproj" />
+    <ProjectReference Include="..\LambdaApi.DI\LambdaApi.DI.csproj" />
     <ProjectReference Include="..\LambdaApi.Infraestructure\LambdaApi.Infraestructure.csproj" />
   </ItemGroup>
 </Project>
