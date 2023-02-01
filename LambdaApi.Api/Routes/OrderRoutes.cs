@@ -1,7 +1,7 @@
 ﻿using LambdaApi.Api.Extensions;
-using LambdaApi.Application.UseCases.CreateOrder;
+using LambdaApi.Application.UseCases.CustomerOrders.CreateOrder;
 using LambdaApi.Application.UseCases.CustomerOrders.DeleteOrder;
-using LambdaApi.Application.UseCases.GetCustomerOrder;
+using LambdaApi.Application.UseCases.CustomerOrders.GetCustomerOrder;
 using MediatR;
 
 namespace LambdaApi.Api.Routes

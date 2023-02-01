@@ -9,7 +9,7 @@
         "Architectures": [
           "x86_64"
         ],
-        "Handler": "LambdaApi::LambdaApi.Functions::Get",
+        "Handler": "LambdaApi::LambdaApi.Function::FunctionHandler",
         "Runtime": "dotnet6",
         "CodeUri": "",
         "MemorySize": 256,
@@ -22,7 +22,7 @@
           "RootGet": {
             "Type": "Api",
             "Properties": {
-              "Path": "/",
+              "Path": "/customer",
               "Method": "GET"
             }
           }

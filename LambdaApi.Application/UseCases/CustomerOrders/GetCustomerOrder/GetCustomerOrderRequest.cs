@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LambdaApi.Application.UseCases.GetCustomerOrder
+namespace LambdaApi.Application.UseCases.CustomerOrders.GetCustomerOrder
 {
     public record GetCustomerOrderRequest(Guid Customer) : IRequest<Result<GetCustomerOrderResponse>>;
 

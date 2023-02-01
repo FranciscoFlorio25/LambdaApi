@@ -1,10 +1,4 @@
-﻿using LambdaApi.Application;
-using LambdaApi.Configuration;
-using LambdaApi.Infraestructure;
-using LambdaApi.Services;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace LambdaApi.DI
 {

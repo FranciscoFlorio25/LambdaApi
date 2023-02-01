@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LambdaApi.Application.UseCases.CreateOrder
+namespace LambdaApi.Application.UseCases.CustomerOrders.CreateOrder
 {
     public class CreateOrderRequestHandler : IRequestHandler<CreateOrderRequest, Result<CreateOrderResponse>>
     {
@@ -29,19 +29,19 @@ namespace LambdaApi.Application.UseCases.CreateOrder
                 return "customer doesnt exist";
             }
 
-            CustomerOrder newOrder = new CustomerOrder(request.CustomerId, request.ProdcutName,request.ProductDescription,request.ProductoPrice);
+            CustomerOrder newOrder = new CustomerOrder(request.CustomerId, request.ProdcutName, request.ProductDescription, request.ProductoPrice);
 
             try
             {
                 await _context.CustomerOrders.AddAsync(newOrder);
                 await _context.SaveChangesAsync(cancellationToken);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return "Order coudent be added error: " + ex.Message;
             }
 
-            return new CreateOrderResponse(request.CustomerId,request.ProdcutName,request.ProductDescription,request.ProductoPrice);
+            return new CreateOrderResponse(request.CustomerId, request.ProdcutName, request.ProductDescription, request.ProductoPrice);
         }
     }
 }

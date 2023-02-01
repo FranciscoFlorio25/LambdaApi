@@ -11,10 +11,10 @@
     <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="appettings.json" />
+    <None Remove="appsettings.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appettings.json">
+    <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LambdaApi.Application\LambdaApi.Application.csproj" />
+    <ProjectReference Include="..\LambdaApi.Configuration\LambdaApi.Configuration.csproj" />
     <ProjectReference Include="..\LambdaApi.DI\LambdaApi.DI.csproj" />
     <ProjectReference Include="..\LambdaApi.Infraestructure\LambdaApi.Infraestructure.csproj" />
   </ItemGroup>
